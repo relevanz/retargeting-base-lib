@@ -1,0 +1,18 @@
+### macOS
+.Ds_Store
+._.DS_Store
+
+### NetBeans
+**/nbproject/private/
+**/nbproject/Makefile-*.mk
+**/nbproject/Package-*.bash
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+### composer
+composer.lock
+vendor/
+
