@@ -7,8 +7,8 @@ Released under the MIT License (Expat)
 */
 namespace RelevanzTracking\Lib;
 
-use RelevanzTracking\Lib\RelevanzException;
-use RelevanzTracking\Lib\RelevanzExceptionMessage;
+use RelevanzTracking\Lib\Exception\RelevanzException;
+use RelevanzTracking\Lib\Exception\RelevanzExceptionMessage;
 
 use RelevanzTracking\Lib\Credentials;
 
