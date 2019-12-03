@@ -1,5 +1,5 @@
 {
-    "name": "releva/core-lib",
+    "name": "releva/tracking-core",
     "type": "library",
     "description": "Core lib for releva.nz tracking plugins.",
     "keywords": [
@@ -12,7 +12,7 @@
     },
     "autoload": {
         "psr-4": {
-            "RelevanzTracking\\Lib\\": "lib/"
+            "Releva\\Tracking\\Core\\": "lib/"
         }
     }
 }

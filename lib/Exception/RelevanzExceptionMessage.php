@@ -5,7 +5,7 @@ Released under the MIT License (Expat)
 [https://opensource.org/licenses/MIT]
 --------------------------------------------------------------
 */
-namespace RelevanzTracking\Lib\Exception;
+namespace Releva\Tracking\Core\Exception;
 
 class RelevanzExceptionMessage {
     protected $message = '';
@@ -23,4 +23,5 @@ class RelevanzExceptionMessage {
     public function getSprintfArgs() {
         return $this->sprintf;
     }
+
 }

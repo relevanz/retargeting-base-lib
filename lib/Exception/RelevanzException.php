@@ -5,7 +5,7 @@ Released under the MIT License (Expat)
 [https://opensource.org/licenses/MIT]
 --------------------------------------------------------------
 */
-namespace RelevanzTracking\Lib\Exception;
+namespace Releva\Tracking\Core\Exception;
 
 use RuntimeException;
 use Throwable;
@@ -32,4 +32,5 @@ class RelevanzException extends RuntimeException {
     public function getSprintfArgs() {
         return $this->remessage->getSprintfArgs();
     }
+
 }

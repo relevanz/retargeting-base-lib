@@ -5,7 +5,7 @@ Released under the MIT License (Expat)
 [https://opensource.org/licenses/MIT]
 --------------------------------------------------------------
 */
-namespace RelevanzTracking\Lib;
+namespace Releva\Tracking\Core;
 
 /**
  * This is loosely based on the composer autoloader.

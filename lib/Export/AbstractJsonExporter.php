@@ -5,16 +5,17 @@ Released under the MIT License (Expat)
 [https://opensource.org/licenses/MIT]
 --------------------------------------------------------------
 */
-namespace RelevanzTracking\Lib\Export;
+namespace Releva\Tracking\Core\Export;
 
-use RelevanzTracking\Lib\Export\Item\ExportItemInterface;
+use Releva\Tracking\Core\Export\Item\ExportItemInterface;
 
 /**
  * JSON Export Generator
  *
  * Provides an interface for exporting data in the JSON format.
  */
-abstract class AbstractJsonExporter implements ExporterInterface {
+abstract class AbstractJsonExporter implements ExporterInterface
+{
     protected $data = [];
 
     public function __construct() {}

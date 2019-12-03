@@ -5,9 +5,10 @@ Released under the MIT License (Expat)
 [https://opensource.org/licenses/MIT]
 --------------------------------------------------------------
 */
-namespace RelevanzTracking\Lib;
+namespace Releva\Tracking\Core;
 
-abstract class AbstractShopInfo {
+abstract class AbstractShopInfo
+{
     /**
      * Technical name of the shop system.
      *

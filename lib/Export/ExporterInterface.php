@@ -5,16 +5,17 @@ Released under the MIT License (Expat)
 [https://opensource.org/licenses/MIT]
 --------------------------------------------------------------
 */
-namespace RelevanzTracking\Lib\Export;
+namespace Releva\Tracking\Core\Export;
 
-use RelevanzTracking\Lib\Export\Item\ExportItemInterface;
+use Releva\Tracking\Core\Export\Item\ExportItemInterface;
 
 /**
  * Exporter Interface
  * 
  * Provides an interface for exporting the products data.
  */
-interface ExporterInterface {
+interface ExporterInterface
+{
     public function addItem(ExportItemInterface $item);
     public function getContents();
     public function getHttpHeaders();

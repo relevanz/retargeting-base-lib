@@ -5,7 +5,7 @@ Released under the MIT License (Expat)
 [https://opensource.org/licenses/MIT]
 --------------------------------------------------------------
 */
-namespace RelevanzTracking\Lib\Export\Helper;
+namespace Releva\Tracking\Core\Export\Helper;
 
 /**
  * CSV Writer

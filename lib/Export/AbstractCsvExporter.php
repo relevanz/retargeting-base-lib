@@ -5,17 +5,18 @@ Released under the MIT License (Expat)
 [https://opensource.org/licenses/MIT]
 --------------------------------------------------------------
 */
-namespace RelevanzTracking\Lib\Export;
+namespace Releva\Tracking\Core\Export;
 
-use RelevanzTracking\Lib\Export\Item\ExportItemInterface;
-use RelevanzTracking\Lib\Export\Helper\CsvWriter;
+use Releva\Tracking\Core\Export\Item\ExportItemInterface;
+use Releva\Tracking\Core\Export\Helper\CsvWriter;
 
 /**
  * CSV Export Generator
  *
  * Provides methods for exporting data as CSV file.
  */
-abstract class AbstractCsvExporter implements ExporterInterface {
+abstract class AbstractCsvExporter implements ExporterInterface
+{
     protected $filename = 'data';
     protected $csv = null;
 

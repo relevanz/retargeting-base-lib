@@ -5,17 +5,18 @@ Released under the MIT License (Expat)
 [https://opensource.org/licenses/MIT]
 --------------------------------------------------------------
 */
-namespace RelevanzTracking\Lib\Export;
+namespace Releva\Tracking\Core\Export;
 
-use RelevanzTracking\Lib\Export\Item\ProductExportItem;
-use RelevanzTracking\Lib\Export\Item\ExportItemInterface;
+use Releva\Tracking\Core\Export\Item\ProductExportItem;
+use Releva\Tracking\Core\Export\Item\ExportItemInterface;
 
 /**
  * Export Products Exporter (CSV format)
  *
  * Provides methods for exporting the products data.
  */
-class ProductCsvExporter extends AbstractCsvExporter {
+class ProductCsvExporter extends AbstractCsvExporter
+{
     protected $filename = 'products';
 
     /**

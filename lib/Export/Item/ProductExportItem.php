@@ -5,15 +5,15 @@ Released under the MIT License (Expat)
 [https://opensource.org/licenses/MIT]
 --------------------------------------------------------------
 */
-namespace RelevanzTracking\Lib\Export\Item;
+namespace Releva\Tracking\Core\Export\Item;
 
 /**
  * Product export item
  *
  * Simple data wrapper object that represents a product.
  */
-class ProductExportItem implements ExportItemInterface {
-
+class ProductExportItem implements ExportItemInterface
+{
     protected $id = 0;
     protected $categoryIds = [];
     protected $name = '';
@@ -78,4 +78,5 @@ class ProductExportItem implements ExportItemInterface {
             'image' => $this->image,
         ];
     }
+
 }
