@@ -5,7 +5,7 @@ Released under the MIT License (Expat)
 [https://opensource.org/licenses/MIT]
 --------------------------------------------------------------
 */
-namespace Releva\Tracking\Core;
+namespace Releva\Retargeting\Base;
 
 /**
  * Simple helper class to assist with shopsystem compatibility.

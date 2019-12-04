@@ -5,10 +5,9 @@ Released under the MIT License (Expat)
 [https://opensource.org/licenses/MIT]
 --------------------------------------------------------------
 */
-namespace Releva\Tracking\Core\Exception;
+namespace Releva\Retargeting\Base\Exception;
 
 use RuntimeException;
-use Throwable;
 
 /**
  * An own exception class to differenciate own exceptions from system exceptions.
@@ -16,7 +15,7 @@ use Throwable;
 class RelevanzException extends RuntimeException {
     protected $remessage = null;
 
-    public function __construct($message = null, $code = 0, Throwable $previous = null) {
+    public function __construct($message = null, $code = 0, $previous = null) {
         $m = '';
         if ($message instanceof RelevanzExceptionMessage) {
             $m = $message->getMessage();

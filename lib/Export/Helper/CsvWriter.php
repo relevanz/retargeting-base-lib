@@ -5,7 +5,10 @@ Released under the MIT License (Expat)
 [https://opensource.org/licenses/MIT]
 --------------------------------------------------------------
 */
-namespace Releva\Tracking\Core\Export\Helper;
+namespace Releva\Retargeting\Base\Export\Helper;
+
+use Exception;
+use RuntimeException;
 
 /**
  * CSV Writer
@@ -102,10 +105,10 @@ class CsvWriter {
                 } else {
                     $this->handle = fopen('php://memory', 'rwb');
                 }
-            } catch (\Exception $e) {}
+            } catch (Exception $e) {}
 
             if ($this->handle === false) {
-                throw new \RuntimeException('Unable to create/access file: '.$this->filename, 1449173661);
+                throw new RuntimeException('Unable to create/access file: '.$this->filename, 1449173661);
             }
         }
     }

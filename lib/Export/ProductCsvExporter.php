@@ -5,10 +5,12 @@ Released under the MIT License (Expat)
 [https://opensource.org/licenses/MIT]
 --------------------------------------------------------------
 */
-namespace Releva\Tracking\Core\Export;
+namespace Releva\Retargeting\Base\Export;
 
-use Releva\Tracking\Core\Export\Item\ProductExportItem;
-use Releva\Tracking\Core\Export\Item\ExportItemInterface;
+use InvalidArgumentException;
+
+use Releva\Retargeting\Base\Export\Item\ProductExportItem;
+use Releva\Retargeting\Base\Export\Item\ExportItemInterface;
 
 /**
  * Export Products Exporter (CSV format)
@@ -25,7 +27,7 @@ class ProductCsvExporter extends AbstractCsvExporter
      */
     public function addItem(ExportItemInterface $product) {
         if (!($product instanceof ProductExportItem)) {
-            throw new \InvalidArgumentException(
+            throw new InvalidArgumentException(
                 'Expected object of type '.ProductExportItem::class.', got '.get_class($product).'.',
                 1574007381
             );

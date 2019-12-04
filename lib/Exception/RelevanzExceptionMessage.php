@@ -5,9 +5,10 @@ Released under the MIT License (Expat)
 [https://opensource.org/licenses/MIT]
 --------------------------------------------------------------
 */
-namespace Releva\Tracking\Core\Exception;
+namespace Releva\Retargeting\Base\Exception;
 
-class RelevanzExceptionMessage {
+class RelevanzExceptionMessage
+{
     protected $message = '';
     protected $sprintf = [];
 

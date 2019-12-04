@@ -5,12 +5,12 @@ Released under the MIT License (Expat)
 [https://opensource.org/licenses/MIT]
 --------------------------------------------------------------
 */
-namespace Releva\Tracking\Core;
+namespace Releva\Retargeting\Base;
 
-use RelevanzTracking\Lib\Exception\RelevanzException;
-use RelevanzTracking\Lib\Exception\RelevanzExceptionMessage;
+use Releva\Retargeting\Base\Exception\RelevanzException;
+use Releva\Retargeting\Base\Exception\RelevanzExceptionMessage;
 
-use RelevanzTracking\Lib\Credentials;
+use Releva\Retargeting\Base\Credentials;
 
 class RelevanzApi
 {

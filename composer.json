@@ -1,9 +1,9 @@
 {
-    "name": "releva/tracking-core",
+    "name": "releva/retargeting-base",
     "type": "library",
-    "description": "Core lib for releva.nz tracking plugins.",
+    "description": "Base lib for releva.nz retargeting plugins.",
     "keywords": [
-        "releva.nz", "tracking", "advertising"
+        "releva.nz", "retargeting", "advertising"
     ],
     "homepage": "https://releva.nz",
     "license": "MIT",
@@ -12,7 +12,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Releva\\Tracking\\Core\\": "lib/"
+            "Releva\\Retargeting\\Base\\": "lib/"
         }
     }
 }

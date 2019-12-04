@@ -5,10 +5,12 @@ Released under the MIT License (Expat)
 [https://opensource.org/licenses/MIT]
 --------------------------------------------------------------
 */
-namespace Releva\Tracking\Core\Export;
+namespace Releva\Retargeting\Base\Export;
 
-use Releva\Tracking\Core\Export\Item\ExportItemInterface;
-use Releva\Tracking\Core\Export\Helper\CsvWriter;
+use Exception;
+
+use Releva\Retargeting\Base\Export\Item\ExportItemInterface;
+use Releva\Retargeting\Base\Export\Helper\CsvWriter;
 
 /**
  * CSV Export Generator
@@ -53,7 +55,7 @@ abstract class AbstractCsvExporter implements ExporterInterface
                 } else {
                     try {
                         $row[$key] = json_encode($value, defined('JSON_THROW_ON_ERROR') ? JSON_THROW_ON_ERROR : 0);
-                    } catch (\Exception $e) {}
+                    } catch (Exception $e) {}
                     if ($row[$key] == null) {
                         $row[$key] = 'encode_error';
                     }

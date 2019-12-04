@@ -5,7 +5,7 @@ Released under the MIT License (Expat)
 [https://opensource.org/licenses/MIT]
 --------------------------------------------------------------
 */
-namespace Releva\Tracking\Core\Export\Item;
+namespace Releva\Retargeting\Base\Export\Item;
 
 /**
  * Export Item

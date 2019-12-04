@@ -5,7 +5,7 @@ Released under the MIT License (Expat)
 [https://opensource.org/licenses/MIT]
 --------------------------------------------------------------
 */
-namespace Releva\Tracking\Core\Export;
+namespace Releva\Retargeting\Base\Export;
 
 /**
  * JSON Export Generator for product lists
