@@ -22,10 +22,12 @@ class ProductCsvExporter extends AbstractCsvExporter
     protected $filename = 'products';
 
     /**
+     * Formats a product item for the csv export.
+     *
      * @param ExportItemInterface $product
-     * @return $this
+     * @return array<string,string>
      */
-    public function addItem(ExportItemInterface $product) {
+    public function formatItemRow(ExportItemInterface $product) {
         if (!($product instanceof ProductExportItem)) {
             throw new InvalidArgumentException(
                 'Expected object of type '.ProductExportItem::class.', got '.get_class($product).'.',
@@ -35,8 +37,8 @@ class ProductCsvExporter extends AbstractCsvExporter
         $row = $product->getData();
         $row['categoryIds'] = implode(',', $row['categoryIds']);
         $row['price'] = round($row['price'], 2);
-        $this->csv->writeRow($row);
-        return $this;
+        $row['priceOffer'] = round($row['priceOffer'], 2);
+        return $row;
     }
 
 }

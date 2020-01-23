@@ -21,6 +21,7 @@ abstract class AbstractCsvExporter implements ExporterInterface
 {
     protected $filename = 'data';
     protected $csv = null;
+    protected $headlineWritten = false;
 
     public function __construct() {
         $this->csv = new CsvWriter(null, [
@@ -44,7 +45,7 @@ abstract class AbstractCsvExporter implements ExporterInterface
         return true;
     }
 
-    public function addItem(ExportItemInterface $item) {
+    protected function formatItemRow(ExportItemInterface $item) {
         $row = [];
         foreach ($item->getData() as $key => $value) {
             if (is_float($value)) {
@@ -62,7 +63,16 @@ abstract class AbstractCsvExporter implements ExporterInterface
                 }
             }
         }
-        $this->csv->writeRow($row);
+        return $row;
+    }
+
+    public function addItem(ExportItemInterface $item) {
+        if (!$this->headlineWritten) {
+            $this->csv->writeRow($item->getKeys(), CsvWriter::QUOTE_NONE);
+            $this->headlineWritten = true;
+        }
+
+        $this->csv->writeRow($this->formatItemRow($item));
         return $this;
     }
 

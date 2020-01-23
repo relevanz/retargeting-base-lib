@@ -228,8 +228,8 @@ class CsvWriter {
      * @access protected
      * @return array The formatted array (formatting determined by dialect)
      */
-    protected function formatRow(array $row, $altQuote = false) {
-        if ($altQuote === false) {
+    protected function formatRow(array $row, $altQuote = null) {
+        if ($altQuote === null) {
             $altQuote = $this->dialect['quoting'];
         }
 
@@ -276,15 +276,15 @@ class CsvWriter {
      *
      * @access protected
      */
-    protected function writeData($altQuote = false) {
-        $rows = array();
+    protected function writeData($altQuote = null) {
+        $rows = [];
         foreach ($this->data as $row) {
             $rows[] = implode($this->formatRow($row, $altQuote), $this->dialect['delimiter']);
         }
         // ensures that there is a line terminator at the end of the file, which is necessary
         $output = implode($rows, $this->dialect['lineterminator']) . $this->dialect['lineterminator'];
         fwrite($this->handle, $output);
-        $this->data = array(); // data has been written, so empty it
+        $this->data = []; // data has been written, so empty it
     }
 
     /**
@@ -293,7 +293,7 @@ class CsvWriter {
      * @param array An array representing a row of data to be written
      * @access public
      */
-    public function writeRow(array $row, $altQuote = false) {
+    public function writeRow(array $row, $altQuote = null) {
         $this->data[] = $row;
         $this->writeData($altQuote);
     }
@@ -304,7 +304,7 @@ class CsvWriter {
      * @param array An two-dimensional array representing rows of data to be written
      * @access public
      */
-    public function writeRows($rows, $altQuote = false) {
+    public function writeRows($rows, $altQuote = null) {
         $this->data = $rows;
         $this->writeData($altQuote);
     }

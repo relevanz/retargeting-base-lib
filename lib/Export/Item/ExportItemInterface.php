@@ -15,7 +15,16 @@ namespace Releva\Retargeting\Base\Export\Item;
 interface ExportItemInterface
 {
     /**
+     * Associative array representation of the item.
+     *
      * @return array<string,mixed>
      */
     public function getData();
+
+    /**
+     * List of the keys that getData() returns.
+     *
+     * @return array<string>
+     */
+    public function getKeys();
 }

@@ -23,13 +23,17 @@ class ProductExportItem implements ExportItemInterface
     protected $link = '';
     protected $image = '';
 
-    public function __construct($id, array $cIds, $name, $descShort, $descLong, $price, $link, $image) {
+    public function __construct($id, array $cIds, $name, $descShort, $descLong, $price, $priceOffer, $link, $image) {
         $this->id = $id;
         $this->categoryIds = $cIds;
         $this->name = $name;
         $this->descriptionShort = $descShort;
         $this->descriptionLong = $descLong;
         $this->price = (float)$price;
+        $this->priceOffer = (float)$priceOffer;
+        if ($this->priceOffer <= 0) {
+            $this->priceOffer = $this->price;
+        }
         $this->link = $link;
         $this->image = $image;
     }
@@ -58,6 +62,10 @@ class ProductExportItem implements ExportItemInterface
         return $this->price;
     }
 
+    public function getPriceOffer() {
+        return $this->priceOffer;
+    }
+
     public function getLink() {
         return $this->link;
     }
@@ -74,9 +82,14 @@ class ProductExportItem implements ExportItemInterface
             'descriptionShort' => $this->descriptionShort,
             'descriptionLong' => $this->descriptionLong,
             'price' => $this->price,
+            'priceOffer' => $this->priceOffer,
             'link' => $this->link,
             'image' => $this->image,
         ];
+    }
+
+    public function getKeys() {
+        return array_keys($this->getData());
     }
 
 }
