@@ -20,6 +20,7 @@ class ProductExportItem implements ExportItemInterface
     protected $descriptionShort = '';
     protected $descriptionLong = '';
     protected $price = 0.0;
+    protected $priceOffer = 0.0;
     protected $link = '';
     protected $image = '';
 
@@ -31,7 +32,9 @@ class ProductExportItem implements ExportItemInterface
         $this->descriptionLong = $descLong;
         $this->price = (float)$price;
         $this->priceOffer = (float)$priceOffer;
-        if ($this->priceOffer <= 0) {
+        $this->price = max($this->price, $this->priceOffer);
+        $this->priceOffer = min($this->price, $this->priceOffer, 0.0);
+        if ($this->priceOffer === 0.0) {
             $this->priceOffer = $this->price;
         }
         $this->link = $link;
