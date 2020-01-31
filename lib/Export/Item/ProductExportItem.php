@@ -33,8 +33,8 @@ class ProductExportItem implements ExportItemInterface
         $this->price = (float)$price;
         $this->priceOffer = (float)$priceOffer;
         $this->price = max($this->price, $this->priceOffer);
-        $this->priceOffer = min($this->price, $this->priceOffer, 0.0);
-        if ($this->priceOffer === 0.0) {
+        $this->priceOffer = min($this->price, $this->priceOffer);
+        if ($this->priceOffer <= 0.0) {
             $this->priceOffer = $this->price;
         }
         $this->link = $link;
