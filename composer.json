@@ -1,5 +1,5 @@
 {
-    "name": "releva/retargeting-base",
+    "name": "relevanz/retargeting-base-lib",
     "type": "library",
     "description": "Base lib for releva.nz retargeting plugins.",
     "keywords": [
