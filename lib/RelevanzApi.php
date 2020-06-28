@@ -14,9 +14,8 @@ use Releva\Retargeting\Base\Credentials;
 
 class RelevanzApi
 {
-    const RELEVANZ_STATS_API   = 'https://api.hyj.mobi/stats';
-    const RELEVANZ_STATS_FRAME = 'https://customer.releva.nz/?apikey=';
-    const RELEVANZ_KEY_URL     = 'https://api.hyj.mobi/user/get?apikey=';
+    const RELEVANZ_STATS_FRAME = 'https://frontend.releva.nz/token?token=';
+    const RELEVANZ_KEY_URL     = 'https://backend.releva.nz/v1/campaigns/get?apikey=';
     const RELEVANZ_TRACKER_URL = 'https://pix.hyj.mobi/rt';
     const RELEVANZ_CONV_URL    = 'https://d.hyj.mobi/conv';
 
@@ -65,11 +64,8 @@ class RelevanzApi
         if (!is_array($apiResponse) || !isset($apiResponse['user_id']) || !((int)$apiResponse['user_id'] > 0)) {
             throw new RelevanzException($apiErr, 1553935786);
         }
-        // As of 2019-07-01 the response contains the following informations:
+        // As of 2020-06-17 the response contains the following informations:
         //    ["user_id"]     => int
-        //    ["budget"]      => float
-        //    ["tariff_name"] => string
-        //    ["pricing"]     => int
         return new Credentials($apikey, (int)$apiResponse['user_id']);
     }
 
