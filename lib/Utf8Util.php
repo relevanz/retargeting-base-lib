@@ -11,7 +11,7 @@ namespace Releva\Retargeting\Base;
  * Helper Class to convert strings to UTF-8
  */
 class Utf8Util {
-    const CHARSET_ORDER = [
+    private static $CHARSET_ORDER = [
         // The order is just wild guesswork.
         // First almost all ISO encondings.
         'ISO-8859-1', 'ISO-8859-2', 'ISO-8859-3', 'ISO-8859-4', 'ISO-8859-5', 'ISO-8859-6', 'ISO-8859-7',
@@ -50,8 +50,8 @@ class Utf8Util {
         if (empty(self::$charsetOrder)) {
             $sE = mb_list_encodings();
             self::$charsetOrder = array_merge(
-                array_intersect(self::CHARSET_ORDER, $sE), // remove not supported encodings
-                array_diff($sE, self::CHARSET_ORDER) // add missing encodings to the end of the array.
+                array_intersect(self::$CHARSET_ORDER, $sE), // remove not supported encodings
+                array_diff($sE, self::$CHARSET_ORDER) // add missing encodings to the end of the array.
             );
             self::$supportedCharsetsLower = array_map(function ($m) {
                 return strtolower($m);
