@@ -187,7 +187,7 @@ class CsvWriter {
         return str_replace(
             $this->dialect['quotechar'],
             $this->dialect['escapechar'] . $this->dialect['quotechar'],
-            $input
+            (string) $input
         );
     }
 
